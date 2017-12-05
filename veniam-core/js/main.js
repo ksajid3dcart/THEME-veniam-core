@@ -32,7 +32,8 @@ function addcart_callback(productDiv, data) {
         itemsInCart += item.qty;
         subtotal += (item.price * item.qty);
     });
-    //minicart - subtotal
+	//minicart - subtotal
+    subtotal = subtotal.toFixed(jQuery('body').data('decimal'));
     jQuery('.minicart-items').text(itemsInCart);
     update_flyoutcart();
 
